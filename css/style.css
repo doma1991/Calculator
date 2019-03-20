@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Graduate');
+
+body {
+/*   background-color: */
+  font-family: 'Graduate', cursive;
+  margin: 100px;
+}
+
+#big-container {
+  border: solid #8C5E58 5px;
+  border-radius: 5px;
+  width: 400px;
+  height: auto;
+  margin-top: 10px;
+  background-color: #8C5E58;
+}
+
+#display-container {
+  background-color: #E6F8B2;
+  border: solid black 1px;
+  border-radius: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: -12px;
+  width: 382px;
+}
+
+.display {
+ padding-left: 3px;
+  margin-right: -16px;
+}
+
+#cal-display {
+  height: 40px;
+  color: black;
+}
+
+#display {
+  height: 40px;
+  color: black;
+}
+
+.col-xs-2 {
+  border: solid black 1px;
+  width: 190px;
+  height: 40px;
+  margin-left: 1px;
+  padding-left: 5px;
+  color: black;
+  border-radius: 3px;
+  margin: 1px;
+}
+
+.col-xs-1 {
+  border: solid black 1px;
+  width: 94px;
+  height: 40px;
+  padding-left: 5px;
+  color: black;
+  border-radius: 3px;
+  margin: 1px;
+}
+
+.col-xs-1:hover {
+   border: solid #F0544F 2px;
+   color: #F0544F;
+}
+
+
+#nine {
+  background-color: green;
+}
+
+#eight {
+  background-color: green;
+}
+
+#seven {
+  margin-left: 3px;
+  margin-right: 1px;
+  background-color: green;
+}
+
+#six {
+  background-color: green;
+}
+
+#five {
+  background-color: green;
+}
+
+#four {
+  margin-left: 3px;
+  margin-right: 1px;
+  background-color: green;
+}
+
+#three {
+  background-color: green;
+}
+
+#two {
+  background-color: green;
+}
+
+#one {
+  margin-left: 3px;
+  margin-right: 1px;
+  background-color: green;
+}
+
+#zero {
+  margin-left: 3px;
+  margin-right: 1px;
+  background-color: green;
+}
+
+#zero:hover {
+   border: solid #F0544F 2px;
+   color: #F0544F;
+}
+
+#decimal {
+  background-color: green;
+}
+
+#AC {
+  margin-left: 3px;
+  margin-right: 1px;
+ background-color: #F0544F;
+}
+
+#AC:hover {
+   border: solid #124559 2px;
+   color: #124559;
+}
+
+#divide {
+  background-color: green;
+}
+
+#multiply {
+  background-color: green;
+}
+
+#subtract {
+  background-color: green;
+}
+
+#add {
+  background-color: green;
+}
+
+#equals-top {
+  background-color: #124559;
+}
+
+#equals {
+  background-color: #124559;
+  margin-top: -41px;
+  height: 82px;
+}

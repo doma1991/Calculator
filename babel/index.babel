@@ -1,0 +1,117 @@
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      caldisplay: "",
+      display: "0",
+      total:"0"
+    };
+    
+    this.AC = this.AC.bind(this);
+    this.calculation = this.calculation.bind(this);
+    this.showTotal = this.showTotal.bind(this);
+  }
+  
+  // resets the calculator display
+  AC = () => {
+    this.setState({
+      caldisplay: "",
+      display: "0",
+      total: ""
+    })
+  };
+  
+  //shows the calulation in display windows
+  calculation = (number) => {
+    
+    if (((number === '+')||(number === '-')||(number === '*')||(number === '/')||(number === '.'))&& (number === this.state.caldisplay.charAt(this.state.caldisplay.length - 1)))
+      {
+     return error;
+      }
+    
+    this.state.caldisplay += number;
+    this.state.display = number;
+     
+      this.setState({
+        caldisplay: this.state.caldisplay,
+        display: this.state.display
+      });    
+    
+    if (this.state.caldisplay == "00"){
+      this.setState({
+        caldisplay: "error - press AC",
+        display: "error -press AC"
+      })};
+      // return error;
+  }
+  
+  //performs the actual calculation and displays result
+  showTotal = () => { 
+       this.state.total= eval(this.state.caldisplay); //calulation
+       this.setState({
+        total: this.state.total
+       });
+    
+       this.state.display = this.state.total; 
+       this.setState({
+         display: this.state.display
+       });
+  }
+  
+  render(){
+    return(
+    <div>
+        <div class="container" id="big-container">
+      
+      <div class="container" id="display-container">
+        <div class="row display">
+          <div class="col-xs-4" id="cal-display">{this.state.caldisplay}</div>
+      </div>
+      
+          <div class="row display">
+        <div class="col-xs-4" id="display">{this.state.display}</div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2" id="AC" onClick={this.AC}>AC</div>
+        <div class="col-xs-1" id="divide" onClick={() => this.calculation("/")}>/</div>
+        <div class="col-xs-1" id="multiply" onClick={() => this.calculation("*")}>*</div>
+      </div>
+      
+       <div class="row">
+        <div class="col-xs-1" id="seven" onClick={() => this.calculation("7")}>7</div>
+        <div class="col-xs-1" id="eight" onClick={() => this.calculation("8")}>8</div>
+        <div class="col-xs-1" id="nine" onClick={() => this.calculation("9")}>9</div>
+        <div class="col-xs-1" id="subtract" onClick={() => this.calculation("-")}>-</div>
+      </div>
+      
+       <div class="row">
+        <div class="col-xs-1" id="four" onClick={() => this.calculation("4")}>4</div>
+        <div class="col-xs-1" id="five" onClick={() => this.calculation("5")}>5</div>
+        <div class="col-xs-1" id="six" onClick={() => this.calculation("6")}>6</div>
+        <div class="col-xs-1" id="add" onClick={() => this.calculation("+")}>+</div>
+      </div>
+      
+       <div class="row">
+        <div class="col-xs-1" id="one" onClick={() => this.calculation("1")}>1</div>
+        <div class="col-xs-1" id="two" onClick={() => this.calculation("2")}>2</div>
+        <div class="col-xs-1" id="three" onClick={() => this.calculation("3")}>3</div>
+        <div class="col-xs-1" id="equals-top"></div>
+      </div>
+         
+       <div class="row">
+        <div class="col-xs-2" id="zero" onClick={() => this.calculation("0")}>0</div>
+        <div class="col-xs-1" id="decimal" onClick={() => this.calculation(".")}>.</div>
+        <div class="col-xs-1" id="equals" onClick={() => this.showTotal()}>=</div>
+      </div>
+      
+    </div>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(
+<Calculator />,
+document.getElementById("app")
+);
